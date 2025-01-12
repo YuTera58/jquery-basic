@@ -6,6 +6,7 @@ $(function() {
   });
  });
 
+ //図形にイベントを実装
 $(function() {
   $('div').on({
     'click': () => {
@@ -32,5 +33,19 @@ $(function() {
       // テキストを「mouseout」 
       $('div').text('mouseout');
     },
+  });
+});
+
+// type プロパティを使用したイベントの種類の取得
+$(function() {
+  $(document).on('click keydown', (e) => {
+    // ブラウザ内でクリックされた場合
+    if(e.type === 'click'){
+      $('div').text('クリックされました！');
+    }
+    // ブラウザ内でキーが押された場合
+    if(e.type === 'keydown'){
+      $('div').text('キーが押されました！');
+    }
   });
 });
